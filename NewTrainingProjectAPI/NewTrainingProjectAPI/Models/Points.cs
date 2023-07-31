@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using NewTrainingProjectAPI.DTOs;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace NewTrainingProjectAPI.Models
 {
@@ -12,8 +13,16 @@ namespace NewTrainingProjectAPI.Models
 
         public Guid SessionDetailsID { get; set; }
 
-        [ForeignKey("SessionDetailsID")]  
+        [ForeignKey("SessionDetailsID")]
         public virtual SessionDetails SessionDetails { get; set; }
 
+        public Points(){}
+
+        public Points(AddPointsDTO addPoints)
+        {
+            Id = new Guid();
+            Longitude = addPoints.Longitude; 
+            Latitude = addPoints.Latitude;
+        }
     }
 }

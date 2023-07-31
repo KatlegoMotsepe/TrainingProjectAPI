@@ -1,4 +1,5 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using NewTrainingProjectAPI.DTOs;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace NewTrainingProjectAPI.Models
 {
@@ -12,7 +13,17 @@ namespace NewTrainingProjectAPI.Models
         public Guid EntriesId { get; set; }
 
         [ForeignKey("EntriesId")] 
-        public virtual Entries Entries { get; set; }    
+        public virtual Entries Entries { get; set; }
 
+        public SessionStats(){ }
+
+        public SessionStats(AddStatsDTO addStats)
+        {
+            Id = new Guid();
+            TopSpeed = addStats.TopSpeed;
+            LowSpeed = addStats.LowSpeed;
+            AvePace = addStats.AvePace;
+            AveSpeed = addStats.AveSpeed;
+        }
     }
 }

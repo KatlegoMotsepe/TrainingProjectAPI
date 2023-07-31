@@ -2,6 +2,8 @@
 {
     public class AddPointsDTO
     {
-       // public
+        public float Longitude { get; set; }
+        public float Latitude { get; set; }
+
     }
 }

@@ -73,5 +73,25 @@ namespace NewTrainingProjectAPI.Controllers
             await _context.SaveChangesAsync();
             return Ok(user);
         }
+
+        [HttpPost("Login")]
+        public async Task<IActionResult> LoginUser(UserLoginDTO loginDTO)
+        {
+            var user = await _context.Users.FirstOrDefaultAsync(x => x.Email == loginDTO.Email);
+
+            if (user == null) { return BadRequest("Invald Crendentials"); }
+
+            if (loginDTO.Email == null) { return BadRequest("Invald Crendentials"); }
+
+            bool test = user.PassVali(loginDTO.Password);
+
+            if (test) { return Ok(user); }
+            else
+            {
+                return BadRequest("Invalid Credentials");
+            }
+
+
+        }
     }
 }

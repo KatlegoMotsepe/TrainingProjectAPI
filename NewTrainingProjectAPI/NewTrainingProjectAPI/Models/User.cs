@@ -23,8 +23,8 @@ namespace NewTrainingProjectAPI.Models
         {
 
             Id = Guid.NewGuid();
-            Name = addUser.Name;    
-            Surname = addUser.Surname;  
+            Name = addUser.Name;
+            Surname = addUser.Surname;
             Email = addUser.Email;
             PasswordHAsh(addUser.Password);
         }
@@ -34,6 +34,21 @@ namespace NewTrainingProjectAPI.Models
             using var hmac = new HMACSHA512();
             PassHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(password));
             PassSalt = hmac.Key;
+        }
+
+        public bool PassVali(string password)
+        {
+            using var hmac = new HMACSHA512(PassSalt);
+
+            var newHash = hmac.ComputeHash(Encoding.UTF8.GetBytes(password));
+
+            if (newHash.Length != PassHash.Length) { return false; }
+
+            for (int i = 0; i < newHash.Length; i++)
+            {
+                if (newHash[i] != PassHash[i]) { return false; }
+            }
+            return true;
         }
     }
 }
