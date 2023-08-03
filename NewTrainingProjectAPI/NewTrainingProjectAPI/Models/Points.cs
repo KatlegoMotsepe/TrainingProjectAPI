@@ -23,6 +23,7 @@ namespace NewTrainingProjectAPI.Models
             Id = new Guid();
             Longitude = addPoints.Longitude; 
             Latitude = addPoints.Latitude;
+            SessionDetailsID = addPoints.SessionID;
         }
     }
 }

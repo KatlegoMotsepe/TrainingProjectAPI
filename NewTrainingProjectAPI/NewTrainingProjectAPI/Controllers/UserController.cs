@@ -48,7 +48,6 @@ namespace NewTrainingProjectAPI.Controllers
         }
 
         [HttpGet("GetAUser/{id}")]
-
         public async Task<IActionResult> GetContact(Guid id)
         {
             var user = await _context.Users.FindAsync(id);
@@ -90,8 +89,14 @@ namespace NewTrainingProjectAPI.Controllers
             {
                 return BadRequest("Invalid Credentials");
             }
+        }
 
-
+        [HttpGet("GetUserInfo/{id}")]
+        public async Task<IActionResult> GetUserAndEntries(Guid id)
+        {
+            var details = await _context.Users.Include(x => x.Entries).FirstOrDefaultAsync(x => x.Id == id);
+            if (details == null) { return NotFound(); }
+            return Ok(details);
         }
     }
 }

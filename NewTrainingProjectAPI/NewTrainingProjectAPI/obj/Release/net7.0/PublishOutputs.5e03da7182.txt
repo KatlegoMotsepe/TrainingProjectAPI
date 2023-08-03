@@ -6,6 +6,8 @@ C:\Users\BV-PC1\Documents\GitHub\TrainingProjectAPI\NewTrainingProjectAPI\NewTra
 C:\Users\BV-PC1\Documents\GitHub\TrainingProjectAPI\NewTrainingProjectAPI\NewTrainingProjectAPI\obj\Release\net7.0\PubTmp\Out\NewTrainingProjectAPI.pdb
 C:\Users\BV-PC1\Documents\GitHub\TrainingProjectAPI\NewTrainingProjectAPI\NewTrainingProjectAPI\obj\Release\net7.0\PubTmp\Out\Azure.Core.dll
 C:\Users\BV-PC1\Documents\GitHub\TrainingProjectAPI\NewTrainingProjectAPI\NewTrainingProjectAPI\obj\Release\net7.0\PubTmp\Out\Azure.Identity.dll
+C:\Users\BV-PC1\Documents\GitHub\TrainingProjectAPI\NewTrainingProjectAPI\NewTrainingProjectAPI\obj\Release\net7.0\PubTmp\Out\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\BV-PC1\Documents\GitHub\TrainingProjectAPI\NewTrainingProjectAPI\NewTrainingProjectAPI\obj\Release\net7.0\PubTmp\Out\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
 C:\Users\BV-PC1\Documents\GitHub\TrainingProjectAPI\NewTrainingProjectAPI\NewTrainingProjectAPI\obj\Release\net7.0\PubTmp\Out\Microsoft.AspNetCore.OpenApi.dll
 C:\Users\BV-PC1\Documents\GitHub\TrainingProjectAPI\NewTrainingProjectAPI\NewTrainingProjectAPI\obj\Release\net7.0\PubTmp\Out\Microsoft.Bcl.AsyncInterfaces.dll
 C:\Users\BV-PC1\Documents\GitHub\TrainingProjectAPI\NewTrainingProjectAPI\NewTrainingProjectAPI\obj\Release\net7.0\PubTmp\Out\Microsoft.Data.SqlClient.dll
@@ -24,6 +26,8 @@ C:\Users\BV-PC1\Documents\GitHub\TrainingProjectAPI\NewTrainingProjectAPI\NewTra
 C:\Users\BV-PC1\Documents\GitHub\TrainingProjectAPI\NewTrainingProjectAPI\NewTrainingProjectAPI\obj\Release\net7.0\PubTmp\Out\Microsoft.OpenApi.dll
 C:\Users\BV-PC1\Documents\GitHub\TrainingProjectAPI\NewTrainingProjectAPI\NewTrainingProjectAPI\obj\Release\net7.0\PubTmp\Out\Microsoft.SqlServer.Server.dll
 C:\Users\BV-PC1\Documents\GitHub\TrainingProjectAPI\NewTrainingProjectAPI\NewTrainingProjectAPI\obj\Release\net7.0\PubTmp\Out\Microsoft.Win32.SystemEvents.dll
+C:\Users\BV-PC1\Documents\GitHub\TrainingProjectAPI\NewTrainingProjectAPI\NewTrainingProjectAPI\obj\Release\net7.0\PubTmp\Out\Newtonsoft.Json.dll
+C:\Users\BV-PC1\Documents\GitHub\TrainingProjectAPI\NewTrainingProjectAPI\NewTrainingProjectAPI\obj\Release\net7.0\PubTmp\Out\Newtonsoft.Json.Bson.dll
 C:\Users\BV-PC1\Documents\GitHub\TrainingProjectAPI\NewTrainingProjectAPI\NewTrainingProjectAPI\obj\Release\net7.0\PubTmp\Out\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\BV-PC1\Documents\GitHub\TrainingProjectAPI\NewTrainingProjectAPI\NewTrainingProjectAPI\obj\Release\net7.0\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\BV-PC1\Documents\GitHub\TrainingProjectAPI\NewTrainingProjectAPI\NewTrainingProjectAPI\obj\Release\net7.0\PubTmp\Out\Swashbuckle.AspNetCore.SwaggerUI.dll

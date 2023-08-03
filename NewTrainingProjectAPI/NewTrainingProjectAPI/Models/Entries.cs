@@ -1,4 +1,6 @@
-﻿using System.ComponentModel.DataAnnotations.Schema;
+﻿using Microsoft.Extensions.Configuration.UserSecrets;
+using NewTrainingProjectAPI.DTOs;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace NewTrainingProjectAPI.Models
 {
@@ -20,5 +22,13 @@ namespace NewTrainingProjectAPI.Models
         public virtual SessionDetails SessionDetails { get; set; }
 
         
+        public Entries() { }
+
+        public Entries(AddEntryDTO addEntryDTO)
+        {
+            Id = new Guid();
+            UerId = addEntryDTO.UserId;
+            SessionDetailsId = addEntryDTO.SessionDetailsID;
+        }
     }
 }

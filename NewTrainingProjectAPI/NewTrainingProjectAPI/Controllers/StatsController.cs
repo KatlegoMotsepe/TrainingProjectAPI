@@ -2,6 +2,8 @@
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using NewTrainingProjectAPI.Data;
+using NewTrainingProjectAPI.DTOs;
+using NewTrainingProjectAPI.Models;
 
 namespace NewTrainingProjectAPI.Controllers
 {
@@ -24,6 +26,15 @@ namespace NewTrainingProjectAPI.Controllers
 
             return Ok(stats);
 
+        }
+
+        [HttpPost("Add")]
+        public async Task<IActionResult> AddStat(AddStatsDTO addStatsDTO)
+        {
+            if (addStatsDTO == null) { return BadRequest("You can't enter nothing"); }
+            await _context.SessionStats.AddAsync(new SessionStats(addStatsDTO));
+            await _context.SaveChangesAsync();
+            return Ok(addStatsDTO);
         }
     }
 }

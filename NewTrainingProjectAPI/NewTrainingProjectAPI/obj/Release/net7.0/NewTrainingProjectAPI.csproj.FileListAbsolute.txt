@@ -150,3 +150,7 @@ C:\Users\BV-PC1\Documents\GitHub\TrainingProjectAPI\NewTrainingProjectAPI\NewTra
 C:\Users\BV-PC1\Documents\GitHub\TrainingProjectAPI\NewTrainingProjectAPI\NewTrainingProjectAPI\obj\Release\net7.0\NewTrainingProjectAPI.pdb
 C:\Users\BV-PC1\Documents\GitHub\TrainingProjectAPI\NewTrainingProjectAPI\NewTrainingProjectAPI\obj\Release\net7.0\NewTrainingProjectAPI.genruntimeconfig.cache
 C:\Users\BV-PC1\Documents\GitHub\TrainingProjectAPI\NewTrainingProjectAPI\NewTrainingProjectAPI\obj\Release\net7.0\ref\NewTrainingProjectAPI.dll
+C:\Users\BV-PC1\Documents\GitHub\TrainingProjectAPI\NewTrainingProjectAPI\NewTrainingProjectAPI\bin\Release\net7.0\Microsoft.AspNetCore.JsonPatch.dll
+C:\Users\BV-PC1\Documents\GitHub\TrainingProjectAPI\NewTrainingProjectAPI\NewTrainingProjectAPI\bin\Release\net7.0\Microsoft.AspNetCore.Mvc.NewtonsoftJson.dll
+C:\Users\BV-PC1\Documents\GitHub\TrainingProjectAPI\NewTrainingProjectAPI\NewTrainingProjectAPI\bin\Release\net7.0\Newtonsoft.Json.dll
+C:\Users\BV-PC1\Documents\GitHub\TrainingProjectAPI\NewTrainingProjectAPI\NewTrainingProjectAPI\bin\Release\net7.0\Newtonsoft.Json.Bson.dll
