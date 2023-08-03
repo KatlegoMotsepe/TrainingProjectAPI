@@ -6,6 +6,6 @@
         public double LowSpeed { get; set; }
         public double AveSpeed { get; set; }
         public double AvePace { get; set; }
-        public Guid EntriesID { get; set; }
+        public Guid SessionDetailsID { get; set; }
     }
 }

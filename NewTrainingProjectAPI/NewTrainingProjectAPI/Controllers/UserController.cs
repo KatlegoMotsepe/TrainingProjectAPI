@@ -94,7 +94,7 @@ namespace NewTrainingProjectAPI.Controllers
         [HttpGet("GetUserInfo/{id}")]
         public async Task<IActionResult> GetUserAndEntries(Guid id)
         {
-            var details = await _context.Users.Include(x => x.Entries).FirstOrDefaultAsync(x => x.Id == id);
+            var details = await _context.Users.Include(x => x.SessionDetails).FirstOrDefaultAsync(x => x.Id == id);
             if (details == null) { return NotFound(); }
             return Ok(details);
         }

@@ -10,10 +10,10 @@ namespace NewTrainingProjectAPI.Models
         public double LowSpeed { get; set; }
         public double AveSpeed { get; set; }
         public double AvePace { get; set; }
-        public Guid EntriesId { get; set; }
+        public Guid SessionDetailsID { get; set; }
 
-        [ForeignKey("EntriesId")] 
-        public virtual Entries Entries { get; set; }
+        [ForeignKey("SessionDetailsID")] 
+        public virtual SessionDetails SessionDetails { get; set; }
 
         public SessionStats(){ }
 
@@ -24,6 +24,8 @@ namespace NewTrainingProjectAPI.Models
             LowSpeed = addStats.LowSpeed;
             AvePace = addStats.AvePace;
             AveSpeed = addStats.AveSpeed;
+            SessionDetailsID = 
+                addStats.SessionDetailsID;
         }
     }
 }

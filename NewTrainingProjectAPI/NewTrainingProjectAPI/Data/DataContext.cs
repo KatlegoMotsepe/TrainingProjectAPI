@@ -11,7 +11,7 @@ namespace NewTrainingProjectAPI.Data
         }
 
         public DbSet<User> Users { get; set; }
-        public DbSet<Entries> Entries { get; set; }
+     
         public DbSet<SessionDetails> SessionDetails { get; set; }
         public DbSet<SessionStats> SessionStats { get; set; }
         public DbSet<Points> Points { get; set; }

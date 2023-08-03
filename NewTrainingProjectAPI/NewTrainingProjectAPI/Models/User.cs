@@ -15,7 +15,7 @@ namespace NewTrainingProjectAPI.Models
         public byte[] PassHash { get; set; }
 
         [InverseProperty("User")]
-        public virtual ICollection<Entries> Entries { get; set; }
+        public virtual ICollection<SessionDetails> SessionDetails { get; set; }
 
         public User() { }
 
