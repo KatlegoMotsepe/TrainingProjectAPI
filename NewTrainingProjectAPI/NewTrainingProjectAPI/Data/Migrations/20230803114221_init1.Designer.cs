@@ -12,8 +12,8 @@ using NewTrainingProjectAPI.Data;
 namespace NewTrainingProjectAPI.Data.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20230803091443_init2")]
-    partial class init2
+    [Migration("20230803114221_init1")]
+    partial class init1
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -59,15 +59,12 @@ namespace NewTrainingProjectAPI.Data.Migrations
                     b.Property<DateTime>("StartDate")
                         .HasColumnType("datetime2");
 
-                    b.Property<Guid>("UerId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<Guid>("UserId")
                         .HasColumnType("uniqueidentifier");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("UerId");
+                    b.HasIndex("UserId");
 
                     b.ToTable("SessionDetails");
                 });
@@ -146,7 +143,7 @@ namespace NewTrainingProjectAPI.Data.Migrations
                 {
                     b.HasOne("NewTrainingProjectAPI.Models.User", "User")
                         .WithMany("SessionDetails")
-                        .HasForeignKey("UerId")
+                        .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 

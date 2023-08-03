@@ -12,7 +12,7 @@ using NewTrainingProjectAPI.Data;
 namespace NewTrainingProjectAPI.Data.Migrations
 {
     [DbContext(typeof(DataContext))]
-    [Migration("20230727120258_init")]
+    [Migration("20230803092457_init")]
     partial class init
     {
         /// <inheritdoc />
@@ -24,27 +24,6 @@ namespace NewTrainingProjectAPI.Data.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
-
-            modelBuilder.Entity("NewTrainingProjectAPI.Models.Entries", b =>
-                {
-                    b.Property<Guid>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("SessionDetailsId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.Property<Guid>("UerId")
-                        .HasColumnType("uniqueidentifier");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("SessionDetailsId");
-
-                    b.HasIndex("UerId");
-
-                    b.ToTable("Entries");
-                });
 
             modelBuilder.Entity("NewTrainingProjectAPI.Models.Points", b =>
                 {
@@ -80,7 +59,15 @@ namespace NewTrainingProjectAPI.Data.Migrations
                     b.Property<DateTime>("StartDate")
                         .HasColumnType("datetime2");
 
+                    b.Property<Guid>("UerId")
+                        .HasColumnType("uniqueidentifier");
+
+                    b.Property<Guid>("UserId")
+                        .HasColumnType("uniqueidentifier");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("UerId");
 
                     b.ToTable("SessionDetails");
                 });
@@ -97,18 +84,18 @@ namespace NewTrainingProjectAPI.Data.Migrations
                     b.Property<double>("AveSpeed")
                         .HasColumnType("float");
 
-                    b.Property<Guid>("EntriesId")
-                        .HasColumnType("uniqueidentifier");
-
                     b.Property<double>("LowSpeed")
                         .HasColumnType("float");
+
+                    b.Property<Guid>("SessionDetailsID")
+                        .HasColumnType("uniqueidentifier");
 
                     b.Property<double>("TopSpeed")
                         .HasColumnType("float");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("EntriesId");
+                    b.HasIndex("SessionDetailsID");
 
                     b.ToTable("SessionStats");
                 });
@@ -144,25 +131,6 @@ namespace NewTrainingProjectAPI.Data.Migrations
                     b.ToTable("Users");
                 });
 
-            modelBuilder.Entity("NewTrainingProjectAPI.Models.Entries", b =>
-                {
-                    b.HasOne("NewTrainingProjectAPI.Models.SessionDetails", "SessionDetails")
-                        .WithMany()
-                        .HasForeignKey("SessionDetailsId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.HasOne("NewTrainingProjectAPI.Models.User", "User")
-                        .WithMany("Entries")
-                        .HasForeignKey("UerId")
-                        .OnDelete(DeleteBehavior.Cascade)
-                        .IsRequired();
-
-                    b.Navigation("SessionDetails");
-
-                    b.Navigation("User");
-                });
-
             modelBuilder.Entity("NewTrainingProjectAPI.Models.Points", b =>
                 {
                     b.HasOne("NewTrainingProjectAPI.Models.SessionDetails", "SessionDetails")
@@ -174,30 +142,38 @@ namespace NewTrainingProjectAPI.Data.Migrations
                     b.Navigation("SessionDetails");
                 });
 
-            modelBuilder.Entity("NewTrainingProjectAPI.Models.SessionStats", b =>
+            modelBuilder.Entity("NewTrainingProjectAPI.Models.SessionDetails", b =>
                 {
-                    b.HasOne("NewTrainingProjectAPI.Models.Entries", "Entries")
-                        .WithMany("SessionStats")
-                        .HasForeignKey("EntriesId")
+                    b.HasOne("NewTrainingProjectAPI.Models.User", "User")
+                        .WithMany("SessionDetails")
+                        .HasForeignKey("UerId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.Navigation("Entries");
+                    b.Navigation("User");
                 });
 
-            modelBuilder.Entity("NewTrainingProjectAPI.Models.Entries", b =>
+            modelBuilder.Entity("NewTrainingProjectAPI.Models.SessionStats", b =>
                 {
-                    b.Navigation("SessionStats");
+                    b.HasOne("NewTrainingProjectAPI.Models.SessionDetails", "SessionDetails")
+                        .WithMany("SesionStats")
+                        .HasForeignKey("SessionDetailsID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("SessionDetails");
                 });
 
             modelBuilder.Entity("NewTrainingProjectAPI.Models.SessionDetails", b =>
                 {
                     b.Navigation("Points");
+
+                    b.Navigation("SesionStats");
                 });
 
             modelBuilder.Entity("NewTrainingProjectAPI.Models.User", b =>
                 {
-                    b.Navigation("Entries");
+                    b.Navigation("SessionDetails");
                 });
 #pragma warning restore 612, 618
         }

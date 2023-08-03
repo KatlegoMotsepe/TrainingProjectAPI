@@ -37,12 +37,21 @@ namespace NewTrainingProjectAPI.Controllers
 
         }
 
-        [HttpGet("GetDetails/{id}")]
+        [HttpGet("GetPoints/{id}")]
         public async Task<IActionResult> GetResultAndPoints(Guid id)
         {
             var details = await _context.SessionDetails.Include(x => x.Points).FirstOrDefaultAsync(x => x.Id == id);
             if (details == null) { return NotFound();}
             return Ok(details);
         }
+
+        [HttpGet("GetStats/{id}")]
+        public async Task<IActionResult> GetResultAndStats(Guid id)
+        {
+            var details = await _context.SessionDetails.Include(x => x.SesionStats).FirstOrDefaultAsync(x => x.Id == id);
+            if (details == null) { return NotFound(); }
+            return Ok(details);
+        }
+
     }
 }

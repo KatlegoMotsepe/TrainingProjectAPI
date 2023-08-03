@@ -10,7 +10,7 @@ namespace NewTrainingProjectAPI.Models
         public DateTime EndDate { get; set; }
         public Guid UserId { get; set; }
 
-        [ForeignKey("UerId")]
+        [ForeignKey("UserId")]
         public virtual User User { get; set; }
 
         [InverseProperty("SessionDetails")]
